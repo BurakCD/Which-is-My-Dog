@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".MainActivity">
+    tools:context=".view.MainActivity">
 
     <ImageView
         android:layout_width="300dp"
@@ -29,6 +29,7 @@
         android:layout_marginBottom="40dp"/>
 
     <ProgressBar
+        android:layout_marginTop="150dp"
         android:id="@+id/progressBar"
         android:layout_width="300dp"
         android:layout_height="20dp"

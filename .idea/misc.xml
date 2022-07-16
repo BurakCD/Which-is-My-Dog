@@ -3,12 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/burak/Documents/GitHub/WhichIsMyDog/app/src/main/res/drawable/list_view_background.xml" value="0.12" />
         <entry key="..\:/Users/burak/Documents/GitHub/WhichIsMyDog/app/src/main/res/drawable/progress_bar_background.xml" value="0.113" />
         <entry key="..\:/Users/burak/Documents/GitHub/WhichIsMyDog/app/src/main/res/layout/activity_home.xml" value="0.16822916666666668" />
         <entry key="..\:/Users/burak/Documents/GitHub/WhichIsMyDog/app/src/main/res/layout/activity_main.xml" value="0.16" />
         <entry key="..\:/Users/burak/Documents/GitHub/WhichIsMyDog/app/src/main/res/layout/home_recycler_design.xml" value="0.17844202898550723" />
-        <entry key="..\:/Users/burak/Documents/GitHub/WhichIsMyDog/app/src/main/res/layout/list_child_item.xml" value="0.18125" />
-        <entry key="..\:/Users/burak/Documents/GitHub/WhichIsMyDog/app/src/main/res/layout/list_parent_item.xml" value="0.18125" />
+        <entry key="..\:/Users/burak/Documents/GitHub/WhichIsMyDog/app/src/main/res/layout/list_child_item.xml" value="0.33" />
+        <entry key="..\:/Users/burak/Documents/GitHub/WhichIsMyDog/app/src/main/res/layout/list_parent_item.xml" value="0.33" />
       </map>
     </option>
   </component>

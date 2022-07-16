@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Benim Köpeğim Hangisi</string>
+    <string name="breeds">Irklar</string>
+    <string name="subBreeds">Alt Irklar</string>
+    <string name="iFeelLucky">Şanslı Hissediyorum</string>
 </resources>

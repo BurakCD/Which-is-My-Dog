@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Which Is My Dog</string>
+    <string name="breeds">Breeds</string>
+    <string name="subBreeds">Sub Breeds</string>
+    <string name="iFeelLucky">I Feel Lucky</string>
 </resources>
