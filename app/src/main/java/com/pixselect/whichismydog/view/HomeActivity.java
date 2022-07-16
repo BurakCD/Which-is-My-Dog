@@ -42,7 +42,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
 
-        for(String s:)
+        //for(String s:)
 
         Log.e("Dog Breed****",breeds.get(2));
 
