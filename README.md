@@ -17,5 +17,3 @@
 
 ## **Pull Request atmaktan çekinmeyin.**
 
-
-![Uploading ezgif.com-gif-maker.gif…]()
