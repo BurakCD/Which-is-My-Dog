@@ -11,6 +11,7 @@
 * ViewBinding
 
 ## Uygulama özellikleri
+* Dil: Java
 * Minimum SDK 23(Android 6.0)
 * Kullanılan Api: [Dog API](https://dog.ceo/dog-api/)
 
