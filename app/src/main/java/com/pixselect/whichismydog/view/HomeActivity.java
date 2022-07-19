@@ -54,7 +54,7 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });*/
-        
+
         // TODO: ana ekrandaki ırklara tıklanınca geriye string döndürme özelliğini unutma.
 
 
