@@ -12,8 +12,6 @@
 
 ## Uygulama özellikleri
 * Minimum SDK 23(Android 6.0)
-
-## Kullanılan Api:
-[Dog API](https://dog.ceo/dog-api/)
+* Kullanılan Api: [Dog API](https://dog.ceo/dog-api/)
 
 ## **Pull Request atmaktan çekinmeyin.**
