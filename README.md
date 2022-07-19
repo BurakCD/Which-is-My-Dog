@@ -1,5 +1,9 @@
 # Which Is My Dog
 
+Retrofit kullanılarak yapılmış olan, Dog API içindeki bilgileri listeleyen uygulama.
+
+Application that lists information in Dog API, built using Retrofit.
+
 ## Kullanılan teknolojiler:
 ### SquareUp:
 * [Picasso](https://github.com/square/picasso) Sürüm: 2.8.0
