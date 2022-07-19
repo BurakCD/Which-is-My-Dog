@@ -1,4 +1,4 @@
-# Which_Is_My_Dog
+# Which Is My Dog
 
 ## Kullanılan teknolojiler:
 ### SquareUp:
@@ -13,5 +13,5 @@
 ## Uygulama özellikleri
 * Minimum SDK 23(Android 6.0)
 
-##Kullanılan Api:
-Dog API [Link bilgisi](https://dog.ceo/dog-api/)
+## Kullanılan Api:
+[Dog API](https://dog.ceo/dog-api/)
