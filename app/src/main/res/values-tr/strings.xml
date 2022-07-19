@@ -2,6 +2,7 @@
 <resources>
     <string name="app_name">Benim Köpeğim Hangisi</string>
     <string name="breeds">Irklar</string>
-    <string name="subBreeds">Alt Irklar</string>
     <string name="iFeelLucky">Şanslı Hissediyorum</string>
+    <string name="connectionStatus">Bağlantı hatası</string>
+    <string name="PleaseWait">Lütfen bekleyin</string>
 </resources>
