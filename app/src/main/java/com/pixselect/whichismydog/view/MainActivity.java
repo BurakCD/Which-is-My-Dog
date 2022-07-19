@@ -18,12 +18,12 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        new CountDownTimer(5000,1000){
+        new CountDownTimer(5100,100){
 
             @Override
             public void onTick(long l) {
-                binding.progressBar.setProgress(progressStart += 20);//geçici süreliğine basitleştirme
-                //binding.progressBar.setMax(100);
+                binding.progressBar.setProgress(progressStart += 2);
+                binding.progressBar.setMax(100);
                 //her 100 milisaniyede yüzde 2 = 1 saniyede yüzde 20 gönlüm el vermedi
                 //biterken progress bar dolmadığı için süreyi 5100 ms ye uzattım
             }

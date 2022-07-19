@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/borders"
+    android:padding="10dp"
+    tools:context=".view.SingleImageActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:layout_weight="1"
+        android:padding="3dp"
+        android:id="@+id/ImageView"
+        android:background="@drawable/borders_text"
+        android:src="@drawable/mustafar"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home of the Evil"
+        android:id="@+id/TextView"
+        android:background="@drawable/borders_text"
+        android:textSize="30dp"
+        android:fontFamily="sans-serif-medium"
+        android:textStyle="bold"
+        android:padding="5dp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:layout_weight="0.1"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:textAllCaps="true"/>
+
+</LinearLayout>
