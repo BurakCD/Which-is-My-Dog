@@ -27,6 +27,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
             android:textColor="#000000"
+            android:text="Appenzeller"
             android:textSize="25dp"
             android:textStyle="bold" />
     </Toolbar>
@@ -36,7 +37,6 @@
         android:id="@+id/gridView"
         android:numColumns="1"
         android:verticalSpacing="7dp"
-        android:horizontalSpacing="7dp"
         android:layout_margin="5dp"
         android:layout_height="match_parent" />
 

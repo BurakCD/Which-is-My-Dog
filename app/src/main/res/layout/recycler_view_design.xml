@@ -23,10 +23,8 @@
         android:textAlignment="center"/>
 
     <ImageView
-        android:id="@+id/toolbarBackButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:contentDescription="Back Button"
         android:rotation="180"
         android:adjustViewBounds="true"
         android:padding="10dp"

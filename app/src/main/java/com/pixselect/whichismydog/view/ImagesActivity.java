@@ -26,7 +26,7 @@ import retrofit2.Response;
 
 public class ImagesActivity extends AppCompatActivity {
     private ActivityImagesBinding binding;
-    private String incomingBreed = "hound";
+    private String incomingBreed;
 
     List<String> ImagesList = new ArrayList<>();
     private BreedsInterface Ibreeds;
@@ -37,18 +37,28 @@ public class ImagesActivity extends AppCompatActivity {
         binding = ActivityImagesBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
+
         Ibreeds = ApiUtils.getBreedsDaoInterface();
 
-        /*Intent intent  = getIntent();
+        Intent intent  = getIntent();
         Bundle bundle = intent.getExtras();
 
         if (bundle != null){
             incomingBreed = (String) bundle.get("Breed");
         }
 
-        binding.BreedNameHolder.setText(incomingBreed);*/
+        binding.BreedNameHolder.setText(incomingBreed);
 
         getImagesList();
+
+        binding.toolbarBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+                finish();
+            }
+        });
 
     }
 

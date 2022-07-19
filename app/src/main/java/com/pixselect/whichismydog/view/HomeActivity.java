@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.pixselect.whichismydog.R;
@@ -30,8 +31,6 @@ public class HomeActivity extends AppCompatActivity {
     private RecyclerViewAdapter RWAdapter;
     RecyclerViewDesignBinding recyclerBinding;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,8 +41,8 @@ public class HomeActivity extends AppCompatActivity {
         allBreeds();
 
 
-        Intent intent = new Intent(HomeActivity.this, ImagesActivity.class);
-        startActivity(intent);
+        /*Intent intent = new Intent(HomeActivity.this, ImagesActivity.class);
+        startActivity(intent);*/
 
 
         /*recyclerBinding.breedRow.setOnClickListener(new View.OnClickListener() {

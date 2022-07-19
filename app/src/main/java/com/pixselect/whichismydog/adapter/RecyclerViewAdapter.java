@@ -43,17 +43,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<BreedViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull BreedViewHolder holder, int position) {
         holder.setText(veriler.get(position));
+
+        holder.binding.breedRow.setTag(holder);
+
         holder.binding.breedRow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 breed = holder.binding.RWText.getText().toString();
-                /*Context context = view.getContext();
-                Intent intent = new Intent(context, ImagesActivity.class);
+                Context context = view.getContext();
+                Intent intent = new Intent(view.getContext(), ImagesActivity.class);
                 intent.putExtra("Breed", holder.binding.RWText.getText().toString());
-                context.startActivity(intent);*/
-                //Toast.makeText(this, holder.binding.RWText.getText().toString(),Toast.LENGTH_LONG).show();
-
-
+                context.startActivity(intent);
 
             }
         }); // experimental
@@ -63,9 +63,5 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<BreedViewHolder> {
     public int getItemCount() {
         return veriler.size();
     }
-
-    /*public String giveMeBreed(){
-        return ClickedBreed;
-    }*/
 
 }

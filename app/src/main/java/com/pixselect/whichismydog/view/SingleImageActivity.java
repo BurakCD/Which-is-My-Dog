@@ -30,7 +30,7 @@ public class SingleImageActivity extends AppCompatActivity {
         Picasso.get().load(incomingURL).transform(new RoundedTransformation(16,0)).into(binding.ImageView);
         //RoundedTransformation picassodan implemente edilen bir transform nesnesi
 
-        String holder = incomingURL.substring(30, incomingURL.lastIndexOf("/n"));
+        String holder = incomingURL.substring(30, incomingURL.lastIndexOf("/"));
 
         binding.TextView.setText(holder);
 
