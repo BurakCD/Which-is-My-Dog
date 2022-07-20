@@ -5,13 +5,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.pixselect.whichismydog.R;
 import com.pixselect.whichismydog.adapter.RecyclerViewAdapter;
 import com.pixselect.whichismydog.databinding.ActivityHomeBinding;
-import com.pixselect.whichismydog.databinding.RecyclerViewDesignBinding;
 import com.pixselect.whichismydog.model.Answer;
 import com.pixselect.whichismydog.service.ApiUtils;
 import com.pixselect.whichismydog.service.BreedsInterface;
@@ -24,12 +24,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class HomeActivity extends AppCompatActivity {
-    private ActivityHomeBinding binding;
 
     List<String> breedsList = new ArrayList<>();
     private BreedsInterface Ibreeds;
     private RecyclerViewAdapter RWAdapter;
-    RecyclerViewDesignBinding recyclerBinding;
+    private ActivityHomeBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,23 +40,12 @@ public class HomeActivity extends AppCompatActivity {
         Ibreeds = ApiUtils.getBreedsDaoInterface();
         allBreeds();
 
-
-        /*Intent intent = new Intent(HomeActivity.this, ImagesActivity.class);
-        startActivity(intent);*/
-
-
-        /*recyclerBinding.breedRow.setOnClickListener(new View.OnClickListener() {
+        binding.RandomDude.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, ImagesActivity.class);
-                intent.putExtra("Breed", recyclerBinding.RWText.getText().toString());
-                startActivity(intent);
+                IFeelLucky();
             }
-        });*/
-
-        // TODO: ana ekrandaki ırklara tıklanınca geriye string döndürme özelliğini unutma.
-
-
+        });
 
     }
 
@@ -69,6 +58,25 @@ public class HomeActivity extends AppCompatActivity {
                 breedsList.clear();
                 breedsList.addAll(breedResponceList);
                 initRecyclerView();
+            }
+
+            @Override
+            public void onFailure(Call<Answer> call, Throwable t) {
+                throwError();
+            }
+        });
+    }
+
+    public void IFeelLucky(){
+        Ibreeds.getRandom().enqueue(new Callback<Answer>() {
+            @Override
+            public void onResponse(Call<Answer> call, Response<Answer> response) {
+                List<String> RandomImage = response.body().getMessage();
+
+                String goingURL = RandomImage.get(0).toString();
+                Intent intent = new Intent(HomeActivity.this, SingleImageActivity.class);
+                intent.putExtra("URL", goingURL);
+                startActivity(intent);
             }
 
             @Override

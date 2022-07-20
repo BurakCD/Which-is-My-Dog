@@ -67,11 +67,6 @@ public class ImagesActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Answer> call, Response<Answer> response) {
                 List<String> BreedImagesRespond = response.body().getMessage();
-
-                for (String s : BreedImagesRespond) {
-                    Log.e("cins: ", s);
-                }
-
                 ImagesList.clear();
                 ImagesList.addAll(BreedImagesRespond);
                 activateAdapter(ImagesList, ImagesActivity.this);

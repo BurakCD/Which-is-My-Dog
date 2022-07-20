@@ -15,7 +15,6 @@ public class RetrofitClient {
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
 
-            //BreedsDAOInterface service = retrofit.create(BreedsDAOInterface.class);
         }
         return retrofit;
     }
