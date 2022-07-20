@@ -10,7 +10,7 @@ Application that lists information in Dog API, built using Retrofit.
 * [Retrofit2](https://square.github.io/retrofit/) Sürüm: 2.9.0
 ### Google:
 * RecyclerView
-* [Gson] (https://github.com/google/gson) Sürüm: 2.9.0
+* [Gson](https://github.com/google/gson) Sürüm: 2.9.0
 * GridView
 * ViewBinding
 
@@ -19,5 +19,5 @@ Application that lists information in Dog API, built using Retrofit.
 * Minimum SDK 23(Android 6.0)
 * Kullanılan Api: [Dog API](https://dog.ceo/dog-api/)
 
-## **Pull Request atmaktan çekinmeyin.**
+**Pull Request atmaktan çekinmeyin.**
 
