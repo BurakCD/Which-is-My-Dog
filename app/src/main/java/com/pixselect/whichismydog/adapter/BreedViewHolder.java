@@ -1,9 +1,6 @@
 package com.pixselect.whichismydog.adapter;
 
-import android.util.Log;
 import android.view.View;
-import android.widget.LinearLayout;
-
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.pixselect.whichismydog.databinding.RecyclerViewDesignBinding;

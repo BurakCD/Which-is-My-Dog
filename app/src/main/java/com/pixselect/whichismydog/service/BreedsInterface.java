@@ -14,7 +14,7 @@ public interface BreedsInterface {
     @GET("breed/{breed}/images")
     Call<Answer> listBreedImages(@Path("breed") String breed);
 
-    @GET("breeds/image/random")
+    @GET("breeds/image/random/1")
     Call<Answer> getRandom();
 
 }
