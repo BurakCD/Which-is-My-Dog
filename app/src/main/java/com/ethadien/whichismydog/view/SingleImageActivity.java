@@ -1,13 +1,12 @@
-package com.pixselect.whichismydog.view;
+package com.ethadien.whichismydog.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 
-import com.pixselect.whichismydog.adapter.RoundedTransformation;
-import com.pixselect.whichismydog.databinding.ActivitySingleImageBinding;
+import com.ethadien.whichismydog.adapter.RoundedTransformation;
+import com.ethadien.whichismydog.databinding.ActivitySingleImageBinding;
 import com.squareup.picasso.Picasso;
 
 public class SingleImageActivity extends AppCompatActivity {

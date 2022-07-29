@@ -1,4 +1,4 @@
-package com.pixselect.whichismydog.service;
+package com.ethadien.whichismydog.service;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

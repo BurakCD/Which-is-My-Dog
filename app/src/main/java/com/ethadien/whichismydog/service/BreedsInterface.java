@@ -1,6 +1,6 @@
-package com.pixselect.whichismydog.service;
+package com.ethadien.whichismydog.service;
 
-import com.pixselect.whichismydog.model.Answer;
+import com.ethadien.whichismydog.model.Answer;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

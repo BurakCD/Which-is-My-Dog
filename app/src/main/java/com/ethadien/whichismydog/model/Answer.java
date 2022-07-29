@@ -1,5 +1,5 @@
 
-package com.pixselect.whichismydog.model;
+package com.ethadien.whichismydog.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

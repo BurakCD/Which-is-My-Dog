@@ -1,20 +1,17 @@
-package com.pixselect.whichismydog.adapter;
+package com.ethadien.whichismydog.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
 import android.widget.ImageView;
 
-import com.pixselect.whichismydog.R;
-import com.pixselect.whichismydog.databinding.ActivityImagesBinding;
-import com.pixselect.whichismydog.databinding.GridItemBinding;
+import com.ethadien.whichismydog.R;
+import com.ethadien.whichismydog.databinding.ActivityImagesBinding;
+import com.ethadien.whichismydog.databinding.GridItemBinding;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
 

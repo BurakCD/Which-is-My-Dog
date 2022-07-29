@@ -1,4 +1,4 @@
-package com.pixselect.whichismydog.view;
+package com.ethadien.whichismydog.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 
-import com.pixselect.whichismydog.databinding.ActivityMainBinding;
+import com.ethadien.whichismydog.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;

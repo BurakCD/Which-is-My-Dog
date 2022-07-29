@@ -1,4 +1,4 @@
-package com.pixselect.whichismydog;
+package com.ethadien.whichismydog;
 
 import android.content.Context;
 

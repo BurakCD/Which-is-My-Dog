@@ -1,21 +1,20 @@
-package com.pixselect.whichismydog.view;
+package com.ethadien.whichismydog.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 
 import com.google.android.material.snackbar.Snackbar;
-import com.pixselect.whichismydog.R;
-import com.pixselect.whichismydog.adapter.GridViewAdapter;
-import com.pixselect.whichismydog.databinding.ActivityImagesBinding;
-import com.pixselect.whichismydog.model.Answer;
-import com.pixselect.whichismydog.service.ApiUtils;
-import com.pixselect.whichismydog.service.BreedsInterface;
+import com.ethadien.whichismydog.R;
+import com.ethadien.whichismydog.adapter.GridViewAdapter;
+import com.ethadien.whichismydog.databinding.ActivityImagesBinding;
+import com.ethadien.whichismydog.model.Answer;
+import com.ethadien.whichismydog.service.ApiUtils;
+import com.ethadien.whichismydog.service.BreedsInterface;
 
 import java.util.ArrayList;
 import java.util.List;

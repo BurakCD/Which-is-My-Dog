@@ -1,4 +1,4 @@
-package com.pixselect.whichismydog.adapter;
+package com.ethadien.whichismydog.adapter;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;

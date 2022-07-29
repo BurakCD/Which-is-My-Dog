@@ -1,4 +1,4 @@
-package com.pixselect.whichismydog.service;
+package com.ethadien.whichismydog.service;
 
 public class ApiUtils {
 

@@ -1,21 +1,17 @@
-package com.pixselect.whichismydog.adapter;
+package com.ethadien.whichismydog.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.pixselect.whichismydog.R;
-import com.pixselect.whichismydog.databinding.RecyclerViewDesignBinding;
-import com.pixselect.whichismydog.view.HomeActivity;
-import com.pixselect.whichismydog.view.ImagesActivity;
+import com.ethadien.whichismydog.R;
+import com.ethadien.whichismydog.databinding.RecyclerViewDesignBinding;
+import com.ethadien.whichismydog.view.ImagesActivity;
 
 import java.util.List;
 

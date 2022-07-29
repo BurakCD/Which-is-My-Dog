@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.pixselect.whichismydog">
+    package="com.ethadien.whichismydog">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -16,16 +16,16 @@
         android:theme="@style/Theme.WhichIsMyDog"
         tools:targetApi="31">
         <activity
-            android:name=".view.SingleImageActivity"
+            android:name="com.ethadien.whichismydog.view.SingleImageActivity"
             android:exported="false" />
         <activity
-            android:name=".view.ImagesActivity"
+            android:name="com.ethadien.whichismydog.view.ImagesActivity"
             android:exported="false" />
         <activity
-            android:name=".view.HomeActivity"
+            android:name="com.ethadien.whichismydog.view.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".view.MainActivity"
+            android:name="com.ethadien.whichismydog.view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
