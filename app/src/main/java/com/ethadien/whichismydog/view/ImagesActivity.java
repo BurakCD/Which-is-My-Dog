@@ -93,6 +93,7 @@ public class ImagesActivity extends AppCompatActivity {
         });
 
     }
+    
 
     private void throwError() {
         Snackbar.make(binding.getRoot(), R.string.connectionStatus, 3000).show();

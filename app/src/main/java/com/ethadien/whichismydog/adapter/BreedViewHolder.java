@@ -3,7 +3,7 @@ package com.ethadien.whichismydog.adapter;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.pixselect.whichismydog.databinding.RecyclerViewDesignBinding;
+import com.ethadien.whichismydog.databinding.RecyclerViewDesignBinding;
 
 
 public class BreedViewHolder extends RecyclerView.ViewHolder {
