@@ -1,6 +1,7 @@
 package com.ethadien.whichismydog.view;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import android.content.Context;
 import android.content.Intent;
@@ -33,9 +34,7 @@ public class ImagesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityImagesBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_images);
 
 
         Ibreeds = ApiUtils.getBreedsDaoInterface();

@@ -1,10 +1,12 @@
 package com.ethadien.whichismydog.view;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.ethadien.whichismydog.R;
 import com.ethadien.whichismydog.adapter.RoundedTransformation;
 import com.ethadien.whichismydog.databinding.ActivitySingleImageBinding;
 import com.squareup.picasso.Picasso;
@@ -16,7 +18,7 @@ public class SingleImageActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivitySingleImageBinding.inflate(getLayoutInflater());
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_single_image);
         setContentView(binding.getRoot());
 
         Intent intent  = getIntent();

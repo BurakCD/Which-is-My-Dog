@@ -5,4 +5,6 @@
     <string name="iFeelLucky">I Feel Lucky</string>
     <string name="connectionStatus">Connection failed</string>
     <string name="PleaseWait">Please Wait</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

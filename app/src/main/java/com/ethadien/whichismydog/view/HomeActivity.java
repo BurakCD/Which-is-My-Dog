@@ -1,8 +1,11 @@
 package com.ethadien.whichismydog.view;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingComponent;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -28,25 +31,24 @@ public class HomeActivity extends AppCompatActivity {
     private BreedsInterface Ibreeds;
     private RecyclerViewAdapter RWAdapter;
     private ActivityHomeBinding binding;
+    private Context mContext = this;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityHomeBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_home);
+
+        //binding.setHomeActivity(this);
 
         Ibreeds = ApiUtils.getBreedsDaoInterface();
         allBreeds();
 
-        binding.RandomDude.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                IFeelLucky();
-            }
-        });
-
     }
+
+
+
+
 
     public void allBreeds(){
 
@@ -56,7 +58,10 @@ public class HomeActivity extends AppCompatActivity {
                 List<String> breedResponceList = response.body().getMessage();
                 breedsList.clear();
                 breedsList.addAll(breedResponceList);
+                /*binding.recyclerView.setAdapter(RWAdapter = new RecyclerViewAdapter(breedsList));
+                binding.recyclerView.setLayoutManager(new LinearLayoutManager(mContext));*/
                 initRecyclerView();
+
             }
 
             @Override
@@ -65,6 +70,10 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
+
 
     public void IFeelLucky(){
         Ibreeds.getRandom().enqueue(new Callback<Answer>() {
@@ -86,14 +95,24 @@ public class HomeActivity extends AppCompatActivity {
     }
 
 
+
+
     private void throwError() {
         Snackbar.make(binding.getRoot(), R.string.connectionStatus, 3000).show();
     }
 
+
+
+
+
     private void initRecyclerView() {
-        RWAdapter = new RecyclerViewAdapter(breedsList);
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        binding.recyclerView.setAdapter(RWAdapter);
+        binding.recyclerView.setAdapter(RWAdapter = new RecyclerViewAdapter(breedsList));
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        binding = null;
+    }
 }

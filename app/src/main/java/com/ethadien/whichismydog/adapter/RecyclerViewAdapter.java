@@ -2,11 +2,13 @@ package com.ethadien.whichismydog.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ethadien.whichismydog.R;
@@ -19,7 +21,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<BreedViewHolder> {
 
     List<String> veriler ;
     public String breed;
-    RecyclerViewDesignBinding binding;
+
 
     public RecyclerViewAdapter() {
     }
@@ -31,9 +33,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<BreedViewHolder> {
     @NonNull
     @Override
     public BreedViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_design, parent,false);
 
-        return new BreedViewHolder(view);
+        /*View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_design, parent,false);
+        return new BreedViewHolder(view);*/
+        RecyclerViewDesignBinding binding;
+        binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()),R.layout.recycler_view_design,parent,false);
+        return new BreedViewHolder(binding.getRoot());
     }
 
     @Override
@@ -52,7 +57,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<BreedViewHolder> {
                 context.startActivity(intent);
 
             }
-        }); // experimental
+        });
     }
 
     @Override

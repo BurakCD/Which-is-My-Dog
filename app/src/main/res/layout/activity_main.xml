@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,7 +14,7 @@
         android:layout_height="300dp"
         android:adjustViewBounds="true"
         android:src="@drawable/animal_animals_dog_farm_rural_icon"
-        android:layout_marginBottom="40dp"/>
+        android:layout_marginBottom="40dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -34,8 +35,5 @@
         android:layout_height="20dp"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:progressDrawable="@drawable/progress_bar_background"/>
-
-
-
 
 </LinearLayout>
