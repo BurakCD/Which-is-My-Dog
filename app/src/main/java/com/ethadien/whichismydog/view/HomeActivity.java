@@ -1,14 +1,17 @@
 package com.ethadien.whichismydog.view;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingComponent;
+import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.ethadien.whichismydog.R;
@@ -31,26 +34,48 @@ public class HomeActivity extends AppCompatActivity {
     private BreedsInterface Ibreeds;
     private RecyclerViewAdapter RWAdapter;
     private ActivityHomeBinding binding;
-    private Context mContext = this;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_home);
 
-        //binding.setHomeActivity(this);
+        Toolbar toolbar = binding.toolBar;
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(R.string.app_name);
+        getSupportActionBar().setSubtitle(R.string.breeds);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        try {
+            binding.setActivity(this);
+        }catch (Exception e){
+            Log.e("Hata", "çalışmadı");
+        }
 
         Ibreeds = ApiUtils.getBreedsDaoInterface();
-        allBreeds();
+        //allBreeds();
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.bring_random_menu,menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.bringRandom:
+                IFeelLucky();
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
-
-
-    public void allBreeds(){
+    /*public void allBreeds(){
 
         Ibreeds.allBreeds().enqueue(new Callback<Answer>() {
             @Override
@@ -58,10 +83,7 @@ public class HomeActivity extends AppCompatActivity {
                 List<String> breedResponceList = response.body().getMessage();
                 breedsList.clear();
                 breedsList.addAll(breedResponceList);
-                /*binding.recyclerView.setAdapter(RWAdapter = new RecyclerViewAdapter(breedsList));
-                binding.recyclerView.setLayoutManager(new LinearLayoutManager(mContext));*/
                 initRecyclerView();
-
             }
 
             @Override
@@ -69,10 +91,7 @@ public class HomeActivity extends AppCompatActivity {
                 throwError();
             }
         });
-    }
-
-
-
+    }*/
 
 
     public void IFeelLucky(){
@@ -96,19 +115,19 @@ public class HomeActivity extends AppCompatActivity {
 
 
 
-
     private void throwError() {
         Snackbar.make(binding.getRoot(), R.string.connectionStatus, 3000).show();
     }
 
 
-
-
-
     private void initRecyclerView() {
-        binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        binding.recyclerView.setAdapter(RWAdapter = new RecyclerViewAdapter(breedsList));
-    }
+        try {
+            binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            binding.recyclerView.setAdapter(RWAdapter = new RecyclerViewAdapter(breedsList));
+        }catch (Exception e){
+         Log.e("hata","initRecyclerView: "+e.toString());
+        }
+            }
 
     @Override
     protected void onDestroy() {

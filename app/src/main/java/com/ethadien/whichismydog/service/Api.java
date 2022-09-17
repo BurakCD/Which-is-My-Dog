@@ -3,20 +3,25 @@ package com.ethadien.whichismydog.service;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RetrofitClient {
+public class Api {
 
-    private static Retrofit retrofit = null;
     private static final String BASE_URL = "https://dog.ceo/api/";
+    private static BreedsInterface api;
 
-    public static Retrofit getClient(String baseURL){
-        if (retrofit == null){
-            retrofit = new Retrofit
-                    .Builder()
-                    .baseUrl(baseURL)
+    public static BreedsInterface getApi(){
+        if (api == null){
+
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
+            api = retrofit.create(BreedsInterface.class);
 
         }
-        return retrofit;
+
+        return api;
+
     }
+
+
 }

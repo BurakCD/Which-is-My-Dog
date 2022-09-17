@@ -7,62 +7,82 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ethadien.whichismydog.BR;
 import com.ethadien.whichismydog.R;
 import com.ethadien.whichismydog.databinding.RecyclerViewDesignBinding;
+import com.ethadien.whichismydog.model.Breed;
 import com.ethadien.whichismydog.view.ImagesActivity;
+import com.ethadien.whichismydog.viewmodel.DogBreedsViewModel;
 
 import java.util.List;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<BreedViewHolder> {
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.BreedViewHolder> {
 
-    List<String> veriler ;
-    public String breed;
+    private int layoutId;
+    private List<Breed> breeds;
+    private DogBreedsViewModel viewModel;
 
 
-    public RecyclerViewAdapter() {
-    }
-
-    public RecyclerViewAdapter(List<String> veriler) {
-        this.veriler = veriler;
+    public RecyclerViewAdapter(@LayoutRes int layoutId, DogBreedsViewModel viewModel) {
+        this.layoutId = layoutId;
+        this.viewModel = viewModel;
     }
 
     @NonNull
     @Override
     public BreedViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        ViewDataBinding binding = DataBindingUtil.inflate(layoutInflater, viewType, parent, false);
 
-        /*View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_design, parent,false);
-        return new BreedViewHolder(view);*/
-        RecyclerViewDesignBinding binding;
-        binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()),R.layout.recycler_view_design,parent,false);
-        return new BreedViewHolder(binding.getRoot());
+        return new BreedViewHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull BreedViewHolder holder, int position) {
-        holder.setText(veriler.get(position));
+        holder.bind(viewModel, position);
+    }
 
-        holder.binding.breedRow.setTag(holder);
+    private int getLayoutIdForPosition(int position){
+        return layoutId;
+    }
 
-        holder.binding.breedRow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                breed = holder.binding.RWText.getText().toString();
-                Context context = view.getContext();
-                Intent intent = new Intent(view.getContext(), ImagesActivity.class);
-                intent.putExtra("Breed", holder.binding.RWText.getText().toString());
-                context.startActivity(intent);
-
-            }
-        });
+    public int getItemViewType(int position){
+        return getLayoutIdForPosition(position);
     }
 
     @Override
     public int getItemCount() {
-        return veriler.size();
+        return breeds == null ? 0 : breeds.size();
     }
 
+    public void setDogBreeds(List<Breed> breeds){
+        this.breeds = breeds;
+    }
+
+
+
+
+
+    static class BreedViewHolder extends RecyclerView.ViewHolder {
+        final RecyclerViewDesignBinding binding;
+
+        BreedViewHolder (RecyclerViewDesignBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
+        }
+
+        void bind(DogBreedsViewModel viewModel, Integer position){
+            viewModel.fetchDogBreedImagesAt(position);
+            binding.setVariable(BR.viewModel, viewModel);
+            binding.setVariable(BR.position, position);
+            binding.executePendingBindings();
+        }
+
+    }
 }

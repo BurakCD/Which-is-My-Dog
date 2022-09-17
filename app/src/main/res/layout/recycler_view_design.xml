@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+
+        <variable
+            name="data"
+            type="com.ethadien.whichismydog.model.Answer" />
+
+    </data>
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -14,19 +21,20 @@
         android:layout_height="wrap_content">
 
     <TextView
+        android:id="@+id/RWText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
         android:text="Hound"
         android:textSize="25dp"
         android:textStyle="bold"
-        android:id="@+id/RWText"
-        android:layout_weight="1"
         android:textAllCaps="true"
         android:fontFamily="sans-serif-medium"
         android:textColor="#000000"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        />
 
     <ImageView
         android:layout_width="50dp"
@@ -34,7 +42,9 @@
         android:rotation="180"
         android:adjustViewBounds="true"
         android:padding="10dp"
-        android:src="@drawable/ic_baseline_arrow_back_ios_new_24" />
+        android:onClick="@{()-> data.ClickEvent(RWText.getText().toString())}"
+        android:src="@drawable/ic_baseline_arrow_back_ios_new_24"
+        />
     </LinearLayout>
 
 </LinearLayout>

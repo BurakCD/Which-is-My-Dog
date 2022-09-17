@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        new CountDownTimer(5100,100){
+        new CountDownTimer(1,100){
 
             @Override
             public void onTick(long l) {
